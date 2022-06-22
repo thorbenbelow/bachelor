@@ -21,6 +21,11 @@ Since then there have been a lot of changes to the language to support multi thr
 
 With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno there are apis to achieve real multi threading in all major enviroments.  
 
+### todo
+- erkenntnis und entwicklungsziel konkretisieren
+- Möglichkeiten im Datenaustausch zwischen threads
+- shared memory
+- konkreter bezug auf function objects
 
 ## References
 - Multithreaded JavaScript - Concurrency Beyond the Event Loop (Thomas Hunter II & Bryan English)

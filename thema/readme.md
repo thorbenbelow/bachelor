@@ -28,7 +28,7 @@
 ## Zeitplan
 
 <p align="center">
-  <img src="public/ablauf-drittes-aj.png">
+  <img src="pic/ablauf-drittes-aj.png">
 </p>
 
 ### Bearbeitung
