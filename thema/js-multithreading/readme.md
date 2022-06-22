@@ -4,7 +4,7 @@
 ## Expose
 
 Moore's Law states the number of transistors doubles about every two years, though the cost of computers is halved. While this has been true for a long time, semiconductor advancement has slowed industry-wide since around 2010.  
-A lot of the increase in compute power now comes from an increased core count in CPUs rather than a performance increase in single cores. [1]
+A lot of the increase in compute power now comes from an increased core count in CPUs rather than a performance increase in single cores. [[1]](#references)
 
 It follows that the importance of software that can make use of this increased number also rises.  
 Most modern programming languages provide features that allow for concurrent execution of its code.  
@@ -17,7 +17,7 @@ Parallel programming was only possible in some environments by using other langu
 Since then there have been a lot of changes to the language to support multi threading.  
 
 With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno, there are APIs to achieve real multithreading in all major environments. 
-Communication between Threads or JavaScript contexts is done via message channels and the postMessage API. While this API allows sending JSON Objects and some builtin data types, it also has strict limitations when it comes to other objects. It is not possible to send Function Objects or preserve prototype information.[2]
+Communication between Threads or JavaScript contexts is done via message channels and the postMessage API. While this API allows sending JSON Objects and some builtin data types, it also has strict limitations when it comes to other objects. It is not possible to send Function Objects or preserve prototype information.[[2]](#references)
   
 The goal of this thesis is to explain the underlying model of multithreading in JavaScript, explore the reasoning behind the restrictions regarding the communication between contexts in general and more specifically for Function objects.
 
