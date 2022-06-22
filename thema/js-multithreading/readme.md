@@ -3,23 +3,22 @@
   
 ## Expose
 
-Moores Law states the number of transistors doubles about every two years, though the cost of computers is halved.
-While this has been true for a long time, semiconductor advancement has slowed industry-wide since around 2010.  
-
-A lot of the increase in compute power now comes from an increased core count in cpus rather than a performance increase in single cores.  
+Moore's Law states the number of transistors doubles about every two years, though the cost of computers is halved. While this has been true for a long time, semiconductor advancement has slowed industry-wide since around 2010.  
+A lot of the increase in compute power now comes from an increased core count in CPUs rather than a performance increase in single cores.  
 
 It follows that the importance of software that can make use of this increased number also rises.  
 Most modern programming languages provide features that allow for concurrent execution of its code.  
 
-JavaScript is most well-known as the scripting language for Web pages, although it is also supported by many non-browser enviroments like Node.js or Deno.
+JavaScript is most well-known as the scripting language for Web pages, although it is also supported by many non-browser environments like Node.js or Deno.
 It is lightweight, interpreted or just-in-time compiled, prototype-based and features first-class functions.  
 In the past, the platforms that JavaScript ran on did not provide any thread support, so the language was thought of as single-threaded.  
 Concurrency was achieved through the use of Callbacks and later, with the introduction of promises, asynchronous programming.  
-
-Parallel programming was only possible in some enviroments by using other languages and interfacing with JavaScript.   
+Parallel programming was only possible in some environments by using other languages and interfacing with JavaScript.   
 Since then there have been a lot of changes to the language to support multi threading.  
 
-With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno there are apis to achieve real multi threading in all major enviroments.  
+With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno, there are APIs to achieve real multithreading in all major environments. 
+
+
 
 ### todo
 - erkenntnis und entwicklungsziel konkretisieren

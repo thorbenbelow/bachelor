@@ -13,38 +13,25 @@
 - [ ] Ausfüllen und Abgabe des Laufzettels
   - [ ] Thema
   - [x] 1. Betreuer: Hochschullehrer an der FH Aachen
-  - [ ] 2. Betreuer: Aus dem Betrieb; Muss mindestens Bachelor besitzen
+  - [x] 2. Betreuer: Aus dem Betrieb; Muss mindestens Bachelor besitzen
   - [ ] Festlegung des Bearbeitungszeitraums
 - [ ] Durchführung der BA
-  - Min. 6 und Max 9 Wochen Bearbeitungszeit
+  - Min. 6 und Max. 9 Wochen Bearbeitungszeit
   - 12 ECTS ~ 360h
 - [ ] Kolloquium
+  - 3 ECTS ~ 90h 
   - Maximal 30min insgesamt
   - Genaue Bedingungen sind mit betreuendem Prof zu klären
   - Sollte zeitnah zur Abgabe der BA stattfinden
 - [ ] Exmatrikulation :)
 
-
-## Zeitplan
-
 <p align="center">
   <img src="pic/ablauf-drittes-aj.png">
+  <em>Empfohlener Ablauf drittes Ausbildungsjahr</em>
 </p>
 
-### Bearbeitung
 
-| Woche | Zeitraum      | Phase                             | Ziel                            |
-| ----- | ------------- | --------------------------------- | ------------------------------- |
-| 0     | 27.06 - 3.07  | Vorbereitung                      | Thema und Zeitplan finalisieren |
-| 1     | 04.07 - 10.07 | Recherche und Materialbeschaffung | -                               |
-| 2     | 11.07 - 17.07 | Umsetzung                         | -                               |
-| 3     | 18.07 - 24.07 | Schreibphase                      | -                               |
-| 4     | 25.07 - 31.07 | -                                 | -                               |
-| 5     | 01.08 - 07.08 | -                                 | -                               |
-| 6     | 08.08 - 14.08 | -                                 | -                               |
-| 7     | 15.08 - 21.08 | Abschlussphase                    | -                               |
-| 8     | 22.08 - 28.08 | -                                 | -                               |
-| 9     | 29.08 - 04.09 | -                                 | -                               |
+
  
 ## Themenfindung
 [Mind-Map zur Themeneingrenzung](https://www.mindmeister.com/map/2253267920)  

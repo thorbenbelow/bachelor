@@ -1,3 +1,7 @@
 # Bachelor Thesis Project
 
-- [Planung und allgmeine Informationen](thema/readme.md)
+- Organisation
+  - [Planung und allgemeine Informationen](thema/readme.md)
+  - [Angestrebter Zeitplan](thema/zeitplan.md)
+  - Themenvorschläge
+    - [JavaScript im Kontext der parallelen Programmierung](thema/js-multithreading/readme.md)
