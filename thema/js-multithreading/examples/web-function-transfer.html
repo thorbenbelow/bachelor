@@ -1,0 +1,16 @@
+const { parentPort, isMainThread, Worker } = require("node:worker_threads")
+
+if (isMainThread) {
+
+  const w = new Worker(__filename)
+
+  w.on('message', msg => { eval(msg); test() })
+
+} else {
+
+  function test() {
+    console.log("hi")
+  }
+
+  parentPort.postMessage(Function.toString(test))
+}
