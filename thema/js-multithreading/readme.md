@@ -16,10 +16,13 @@ Concurrency was achieved through the use of Callbacks and later, with the introd
 Parallel programming was only possible in some environments by using other languages and interfacing with JavaScript.   
 Since then there have been a lot of changes to the language to support multi threading.  
 
-With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno, there are APIs to achieve real multithreading in all major environments. 
+With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno, there are APIs to achieve real multithreading in all major environments.
 Communication between Threads or JavaScript contexts is done via message channels and the postMessage API. While this API allows sending JSON Objects and some builtin data types, it also has strict limitations when it comes to other objects. It is not possible to send Function Objects or preserve prototype information.[[2]](#references)
-  
-The goal of this thesis is to explain the underlying model of multithreading in JavaScript, explore the reasoning behind the restrictions regarding the communication between contexts in general and more specifically for Function objects.
+This greatly impacts the way multithreaded programs can be designed, especially for libraries (e. g. using polymorphy across thread bounds becomes non trivial).
+
+The goal of this thesis is to understand the reasoning behind the restrictions regarding the communication between contexts in general and more specifically for Function objects. 
+Um diese Frage zu beantworten wird erst ein Überblick über multithreading und damit einhergehende wichtige Konzepte gegeben. Danach soll das JavaScript zugrunde liegende memory model und die Art und Weise in der Engines Code zu ausführbaren Anweisungen umwandeln genauer betrachtet werden und die bereits vorhandenen und geplanten Möglichkeiten zur Interaktion zwischen Threads dargestellt werden.
+Im Anschluss werden speziell Function Objects (und die entsprechenden Unterarten) betrachtet. Dazu wird prototypisch experimentiert(?) welche Abhängigkeiten und Einschränkungen hier bei der Übertragung über thread bounds entstehen. (e. g. serialize/deserialze nötig?).
 
 
 ## References
@@ -34,8 +37,7 @@ The goal of this thesis is to explain the underlying model of multithreading in 
 - V8 documentation (https://v8.dev/docs)
 
 ### todo
-- thread safety
-- memory ordering
+- add thread safety & memory ordering literature
 
 ## Content
 1. Introduction
