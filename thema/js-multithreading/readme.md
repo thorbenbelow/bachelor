@@ -21,9 +21,7 @@ Communication between Threads or JavaScript contexts is done via message channel
 This greatly impacts the way multithreaded programs can be designed, especially for libraries (e. g. using polymorphy across thread bounds becomes non trivial).
 
 The goal of this thesis is to understand the reasoning behind the restrictions regarding the communication between contexts in general and more specifically for Function objects. 
-Um diese Frage zu beantworten wird erst ein Überblick über multithreading und damit einhergehende wichtige Konzepte gegeben. Danach soll das JavaScript zugrunde liegende memory model und die Art und Weise in der Engines Code zu ausführbaren Anweisungen umwandeln genauer betrachtet werden und die bereits vorhandenen und geplanten Möglichkeiten zur Interaktion zwischen Threads dargestellt werden.
-Im Anschluss werden speziell Function Objects (und die entsprechenden Unterarten) betrachtet. Dazu wird prototypisch experimentiert(?) welche Abhängigkeiten und Einschränkungen hier bei der Übertragung über thread bounds entstehen. (e. g. serialize/deserialze nötig?).
-
+To answer this question, we will first give an overview of multithreading and the important concepts that go along with it. After that, the memory model underlying JavaScript and the way in which engines convert code into executable instructions will be looked at in more detail and the already existing and planned possibilities for interaction between threads will be presented. Subsequently, Function Objects (and the corresponding subtypes) will be considered in particular. In addition prototypically experiment(?) which dependencies and restrictions arise here with the transmission over thread bounds. (e. g. serialize/deserialze necessary?).
 
 ## References
 1. Jeff Parkhurst, John Darringer, and Bill Grundmann. 2006. From single core to multi-core: preparing for a new exponential. In Proceedings of the 2006 IEEE/ACM international conference on Computer-aided design (ICCAD '06). Association for Computing Machinery, New York, NY, USA, 67–72. https://doi.org/10.1145/1233501.1233516
@@ -47,7 +45,7 @@ Im Anschluss werden speziell Function Objects (und die entsprechenden Unterarten
 2. Concurrency
    1. Async vs parallelism
    2. Thread Safety
-   3. Atomics & Memory Ordering
+   3. Atomics & Memory Ordering / Synchronisation
 3. JavaScript
    1. Core concepts
       1. Inheritance and the prototype chain
@@ -62,7 +60,7 @@ Im Anschluss werden speziell Function Objects (und die entsprechenden Unterarten
       3. Shared memory
       4. Atomics
    4. Open proposals 
-4. Implementation
+4. Use Case: Sending and sharing Function Objects
    1. Method 
       1. Serializing & Deserializing
       2. structured clone (?)

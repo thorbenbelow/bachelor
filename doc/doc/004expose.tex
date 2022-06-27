@@ -1,0 +1,38 @@
+\clearpage
+
+\markboth{\textbf{Exposé}}{\textbf{Exposé}}\label{expose}
+\section{Concurrency and Parallelism in the JavaScript Ecosystem}
+
+Moore's Law states the number of transistors doubles about every two years, though the cost of computers is halved. While this has been true for a long time, semiconductor advancement has slowed industry-wide since around 2010.  
+A lot of the increase in compute power now comes from an increased core count in CPUs rather than a performance increase in single cores \cite{single-to-multicore}.
+ \\
+ 
+It follows that the importance of software that can make use of this increased number also rises.  
+Most modern programming languages provide features that allow for concurrent execution of its code.  
+ \\
+JavaScript is best-known as the scripting language of the Web, although it is also supported by many non-browser environments like Node.js or Deno.
+It is lightweight, interpreted or just-in-time compiled, prototype-based and features first-class functions. \\
+In the past, the platforms that JavaScript ran on did not provide any thread support, so the language was thought of as single-threaded.  
+Concurrency was achieved through the use of Callbacks and later, Promises and async/await that use the advantages of the event-based design of the language.  
+Parallel programming was only possible in some environments by using other languages that were capable of invocing threads and interfacing with JavaScript code.   
+Since then there have been a lot of changes to the language to support multi threading.  
+\\
+
+With the introduction of web, shared and service workers in the browser and worker threads in nodejs and deno, there are APIs to achieve real multithreading in all major environments.
+Communication between Threads or JavaScript contexts is done via message channels and the postMessage API. While this API allows sending JSON Objects and some builtin data types, it also has strict limitations when it comes to other objects. It is not possible to send Function Objects or preserve prototype information.[[2]](#references)
+This greatly impacts the way multithreaded programs can be designed, especially for libraries (e. g. using polymorphy across thread bounds becomes non trivial).
+\\
+
+The goal of this thesis is to understand the reasoning behind the restrictions regarding the communication between contexts in general and more specifically for Function objects. 
+To answer this question, we will first give an overview of multithreading and the important concepts that go along with it. After that, the memory model underlying JavaScript and the way in which engines convert code into executable instructions will be looked at in more detail and the already existing and planned possibilities for interaction between threads will be presented. Subsequently, Function Objects (and the corresponding subtypes) will be considered in particular. In addition prototypically experiment(?) which dependencies and restrictions arise here with the transmission over thread bounds. (e. g. serialize/deserialze necessary?).
+\\
+
+
+\section{Literature}
+\begin{itemize}
+    \item Modern operating systems (Tanenbaum and Andrew)
+    \item Multithreaded JavaScript - Concurrency Beyond the Event Loop (Thomas Hunter II and Bryan English)
+    \item ecma262 specification (https://tc39.es/ecma262/)
+    \item HTML specification - Web messaging (https://html.spec.whatwg.org/multipage/web-messaging.html)
+    \item V8 documentation (https://v8.dev/docs)
+\end{itemize}

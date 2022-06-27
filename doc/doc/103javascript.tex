@@ -1,0 +1,44 @@
+\clearpage
+
+\chapter{\textbf{JavaScript}}\label{javascript}
+
+JavaScript (JS) is a general purpose programming language that is best-known as the scripting language for the Web and is defined by the ECMAScript Specification.
+More precisely by the ECMAScript Language Specification (ECMA-262) and the ECMAScript Internationalization API Specification (ECMA-402) \cite{mdn-js}.
+
+\section{Core concepts}\label{js:core-concepts}
+JavaScripts core concepts include being prototype-based, supporting multiple paradigms such as object-oriented and functional programming and having higher order functions \cite{mdn-js}. The following sections give a brief overview over the most important core concepts.
+
+\subsection{Inheritance and the prototype chain}
+
+
+
+
+\subsection{Higher order functions}
+\subsection{Closures}
+\subsection{Strict mode}
+\subsection{Event Loop}
+\subsection{Memory management}
+
+\section{Compilation}
+
+
+\section{Parallelism in JavaScript}
+ECMAScript itself has no notion of Threads. It only has the concept of Realms and execution contexts.
+Instead the Engines and envrionments that JavaScript is executed in provide methods to create new execution contexts (Threads) and interact with them.
+
+
+\subsection{Browser specific}
+In the Browser these are different kind of Workers.
+Currently there are Web, Shared and Service workers.
+The Web Worker is akin to a "normal" Thread. It lives only as long as its parent Context and can only communicate with it and contexts that are related to the parent context.
+
+The Shared Worker allows communication with multiple "Parent" contexts. It lives as long as atleast one parent context is still alive.
+
+
+The Service Worker can persist even after the parent context is already closed. It can communicate with all other contexts that have the same origin.
+
+
+\subsection{Serverside}
+nodejs and deno provide Worker Threads. Theses behave similar to threads known in other programming languages.
+
+\addtocontents{toc}{\vspace{0.8cm}}

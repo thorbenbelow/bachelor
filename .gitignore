@@ -1,4 +1,13 @@
-doc
-object-clone
-planung
 notes.md
+
+# Latex
+*.log
+*.lot
+*.bst
+*.aux
+*.fls
+*.lof
+*.lot
+*.out
+*.toc
+*.fdb_latexmk
