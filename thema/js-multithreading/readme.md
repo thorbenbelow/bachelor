@@ -62,10 +62,11 @@ Subsequently, Function Objects (and the corresponding subtypes) will be consider
 3. JavaScript
    1. Core concepts
       1. Inheritance and the prototype chain
-      2. Closures
-      3. Strict mode
-      4. Concurrency model and Event Loop
-      5. Memory Management
+      2. Higher order functions
+      3. Closures
+      4. Strict mode
+      5. Event Loop
+      6. Memory Management
    2. Compilation
       1. Parsing
       2. Code generation
@@ -77,6 +78,7 @@ Subsequently, Function Objects (and the corresponding subtypes) will be consider
    2. Transferables
    3. Shared memory
    4. Open proposals 
+   5. Differences between runtime environments
 
 5. Use Case: Sending and sharing Function Objects
    1. Method 
