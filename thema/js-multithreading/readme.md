@@ -42,7 +42,7 @@ Subsequently, Function Objects (and the corresponding subtypes) will be consider
 
 
 ## Literature
-- Modern Operating Systems (Tanenbaum & Andrew)
+- Modern Operating Systems (Tanenbaum & Bos)
 - Multithreaded JavaScript - Concurrency Beyond the Event Loop (Thomas Hunter II & Bryan English)
 - ecma262 specification (https://tc39.es/ecma262/)
 - HTML specification - Web messaging (https://html.spec.whatwg.org/multipage/web-messaging.html)
