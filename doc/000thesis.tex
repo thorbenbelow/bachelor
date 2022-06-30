@@ -1,12 +1,21 @@
 \documentclass[oneside,openright,12pt,a4paper]{scrreprt}
 
-% Paket für Umlaute (für Deutsch):
-\usepackage[utf8]{inputenc}       % Cross Platform
-\usepackage{hyperref}   %links in TOC
+\usepackage[utf8]{inputenc}
+\usepackage[
+  tocindentmanual,
+  tocflat,
+  tocbreaksstrict,
+  toctextentriesleft,
+]{tocbasic}
+
+
+\usepackage{hyperref} %links in TOC
+
 \hypersetup{
     colorlinks=false, %set true if you want colored links of references and crossreferences
     linktoc=all,     %set to all if you want both sections and subsections linked
 }
+
 
 \usepackage[german,english]{babel}
 \usepackage[ddmmyyyy]{datetime} 
@@ -25,10 +34,12 @@
 
 \author{Thorben Below}
 
-\usepackage[automark,plainheadsepline,headsepline]{scrpage2}
+\usepackage[automark,plainheadsepline,headsepline]{scrlayer-scrpage}
 \usepackage{color}
 \usepackage{setspace}
-\usepackage[numbers,sort&compress,square]{natbib} %this bibstyle uses numbers, which are sorted (increasing) and summarized eg. 104,105,106 --> 104-106 
+\usepackage[sorting=none]{biblatex}
+\bibliography{./bib/references}
+\bibliography{./bib/manual}
 \usepackage{longtable} 
 \usepackage{listings}
 \usepackage{rotating}
@@ -72,9 +83,6 @@
 \usepackage{fleqn} % left
 \setlength{\mathindent}{1.5cm} % indent
 
-% package for SI-units
-\usepackage{siunitx}
-
 %numbering of tables and figures (if you delete these, the figures and tables will be numbered according the chapter numbers)
 \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
@@ -88,8 +96,17 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
+\usepackage[]{acronym}
 
-% command line
+
+% Renaming 
+\renewcaptionname{english}{\contentsname}{\textbf{Contents}}
+\renewcaptionname{english}{\bibname}{\textbf{References}} 
+
+
+% Custom styling
+
+% bash
 \lstdefinestyle{BashInputStyle}{
   language=bash,
   basicstyle=\small\ttfamily,
@@ -99,68 +116,57 @@
   xleftmargin=0.1\linewidth
 }
 
-% Renaming "table of contents" in "Contents"
-\renewcaptionname{english}{\contentsname}{\textbf{Contents}}
-
-% Renaming "Sources" in "References"
-\renewcaptionname{english}{\bibname}{\textbf{References}} 
-
-\usepackage[
-  tocindentmanual,
-  tocflat,
-  tocbreaksstrict,
-  toctextentriesleft,
-]{tocstyle}
-
-\usepackage[]{acronym}
-
-%start of the document
+% diff view for changes
+\newcommand{\diff}[1]{
+  \colorbox{red!30}{
+    \begin{minipage}{\textwidth}
+    {#1}
+    \end{minipage}
+  }
+}
 
 \begin{document}
 \setstretch{1.5}
 \addtocontents{toc}{\linespread{1}}
 
-% Here the individual chapters are included in the main document by '\include{....}' . The files are in the folder 'doc'
 \include{./doc/001titlepage}
-\pagenumbering{gobble} %no page numbering
-\include{./doc/002erklaerung}
-\setcounter{page}{1} %counter for page numbering is set to 1
-\pagenumbering{Roman} % page numbering is done with capital roman signs (I, II, III...)
-\include{./doc/003abstract}
 
-% Table of contents is generated:
+\include{./doc/002erklaerung}
+\setcounter{page}{1}
+\pagenumbering{Roman}
+%\include{./doc/003abstract}
+
+% table of contents
 \makeatletter
 \renewcommand*{\@dotsep}{1} % set gap between dots
 \makeatother
 \tableofcontents
 
-% First chapter starts on uneven number 
 \cleardoublepage
 \setstretch{1.25}
-\pagenumbering{arabic} %page numbering is done with arabic numbers
+\pagenumbering{arabic}
 
 % Introduction
-%\include{./doc/101intro}
+\include{./doc/101intro}
 
-% Theoretical Background and State of the Art
+% Theoretical Background
 \include{./doc/102concurrency}
 \include{./doc/103javascript}
 
-% Method and Results
-%\include{./doc/104results}
+% State of the Art
+\include{./doc/104current-state}
+
+% Research question
+\include{./doc/105restrictions}
 
 % Discussion and Outlook
-%\include{./doc/105discussion} 
-%\include{./doc/106outlook}
-%\include{./doc/107chapter7}
-%\include{./doc/108chapter8}
+\include{./doc/106discussion}
+\include{./doc/107outlook}
 
 % References
 \clearpage
-\bibliographystyle{unsrtdineng} % modified unsrtdin needs to be included as file in the main path (same level as the main document 000report.tex 
-\bibliography{./bib/references}
+\printbibliography
 \addcontentsline{toc}{chapter}{\textbf{References}}
-% add to TOC
 \clearpage
 
 %List of abbreviations
@@ -188,7 +194,6 @@
 \markright{Acknowledgments}
 \markleft{Acknowledgments}
 \include{./doc/303acknowl}
-
 
 %Appendix
 \include{./doc/401appendix}

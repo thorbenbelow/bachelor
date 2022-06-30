@@ -11,3 +11,7 @@ notes.md
 *.out
 *.toc
 *.fdb_latexmk
+*.bbl
+*.bcf
+*.blg
+*.run.xml

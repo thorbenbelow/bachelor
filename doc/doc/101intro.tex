@@ -2,9 +2,89 @@
 
 %\onehalfspacing
 \chapter{\textbf{Introduction}}\label{objectives}
-\blindtext
 
-\section{Objectives and motivation}
-\blindtext
+\section{Context and motivation}
 
+Moore's Law states that the number of transistors doubles about every two
+years, though the cost of computers is halved \cite*{todo}. While this has been
+true for a long time, semiconductor advancement has slowed industry-wide since
+around 2010. Looking at the development of CPU architectures over the last
+decades in general shows that the pace of imporvement of parameters that
+increase the compute power of single cores, like clock speed and TODO, is in
+decline \cite{todo}. On the other hand the number of cores in the average CPU
+has increased significantly since the Introduction of the first multi-core CPU
+and is steadily rising \cite{todo}. It follows that the importance for
+programming languages to be able to make us of these additional cores and
+software that does so also increases. \\
+
+JavaScript is best-known as the scripting language for Web pages, although it
+is also supported by many non-browser environments like Node.js or Deno. It is
+lightweight, interpreted or just-in-time compiled, prototype-based and features
+first-class functions \cite*{mdn_js}. Because of the event-based nature of JS,
+concurrency is innate to the language. It's achieved through the use of
+Callbacks and more recently with promises and async/await. This form of
+concurrency can solve a lot of problems that would otherwise end in down time
+like waiting for I/O or network requests. While this enables running different
+tasks concurrent instead of strictly sequentualy, the execution is still
+limited to one thread. Other use cases such as ones that require a lot of CPU
+power, or ones that require a lot of memory, don't benefit from this approach.
+Some of these were solved individually by the runtime environments like
+browsers by introducing special APIs, but for a lot of the needs of software
+needs this does not suffice. These use cases are best handled by parallelism
+and the use of multiple threads. \\
+
+In the past, the platforms that JavaScript ran on did not provide any thread
+support, so the language was thought of as single-threaded. While the
+ECMAScript specification has no concept of threads, it specifies realms,
+execution context and its memory management. The implementation of threads and
+the corresponding APIs is left to the runtime environments.\\
+
+In the browser this concept has been in use for a long time e. g. for
+seperating execution contexts of different tabs. With the introduction of web,
+shared and service workers in the browser and worker threads in nodejs and
+deno, there are also APIs for developers to achieve real multithreading in all
+major environments. These differ in their indivdual options and have different
+use cases. While they have been around for a long time now, the usage of these
+possibilities is still quite low and not well understood by a lot of
+developers. This is also visible in the comparatively low number of available
+documentation and examples compared to other features of the language.\\
+
+Communication between Threads or JavaScript contexts is done via message
+channels and the postMessage API. While this API allows sending JSON Objects
+and some builtin data types, it also has strict limitations when it comes to
+other objects. It is not possible to send Function Objects or preserve
+prototype information.[2] This greatly impacts the way multithreaded programs
+can be designed, especially for libraries (e. g. using polymorphy (OOP) and
+compositon (FP) across thread bounds becomes non trivial). \\
+
+\section{Research question and scope}
+
+\diff{
+
+	%Welche Möglichkeiten bestehen bei der Kommunikation zwischen Threads in den verschiedenen JavaScript Umgebungen?
+	%Welche Restriktionen gibt es dabei? Warum gibt es diese Restriktionen?
+
+	The goal of this thesis is to explore the available options and the reasoning behind the
+	restrictions regarding the communication between contexts in general and
+	explain how the underlying mechanism work.\\
+
+	% 1. Was sind threads und wie funktioniert das ganze auf os ebene?
+	% 2. Relevante concepte in JS
+	% 3. Current State & open proposals
+	% 4. Restrictions und gründe abgeleitet aus 1&2
+
+	It starts with an introduction into the relevant concepts underlying
+	processes, threads and interprocess communication on the operating system
+	layer. After that a short overview of JavaScript and its core concepts is
+	given, with a more in detail explanation on the more important ones. To
+	understand the relation between the os layer and JavaScript code, the usual
+	compiling process will als be looked at with the V8 JavaScript Engine serving
+	as an example. With the basics covered, the current possibilities and
+	restrictions in interprocess communication in JavaScript will be established. \\
+
+	Subsequently, Function Objects (and the corresponding subtypes) will be
+	considered in particular. In addition prototypically experiment(?) which
+	dependencies and restrictions arise here with the transmission over thread
+	bounds. (e. g. serialize/deserialze necessary?).\\
+}
 \addtocontents{toc}{\vspace{0.8cm}}
