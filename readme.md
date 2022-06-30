@@ -6,4 +6,5 @@
   - Themenvorschläge
     - [JavaScript im Kontext der parallelen Programmierung](thema/js-multithreading/readme.md)
 - Thesis
-  - [Text](doc)
+  - [latex](doc)
+  - [✨PDF✨](doc/000thesis.pdf)
