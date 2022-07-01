@@ -54,38 +54,24 @@ Subsequently, Function Objects (and the corresponding subtypes) will be consider
    2. Scope
    3. Research question
 
-2. Concurrency
+2. Fundamental concepts of parallelism
    1. Processes and Threads
-   2. Interprocess Communication 
+   2. Communication between threads 
    3. Atomics & Memory Ordering / Synchronisation
 
-3. JavaScript
+3. State of Parallelism in JavaScript
    1. Core concepts
-      1. Inheritance and the prototype chain
-      2. Higher order functions
-      3. Closures
-      4. Strict mode
-      5. Event Loop
-      6. Memory Management
-   2. Compilation
-      1. Parsing
-      2. Code generation
-      3. Code optimization
-      4. Code generation for the engine
+   2. Messaging
+   3. Transferables
+   4. Shared memory
+   5. Open proposals 
+   6. Differences between runtime environments
 
-4. State of Parallelism in JavaScript
-   1. Message channels
-   2. Transferables
-   3. Shared memory
-   4. Open proposals 
-   5. Differences between runtime environments
+4. Limitations
+   1. Function Objects
+   2. Prototype information
+   3. Result
 
-5. Use Case: Sending and sharing Function Objects
-   1. Method 
-      1. Serializing & Deserializing
-      2. structured clone (?)
-   2. Result
-
-6. Discussion
+5. Discussion
    1. Conclusion
    2. Outlook
